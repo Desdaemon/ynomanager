@@ -1,0 +1,20 @@
+[package]
+name = "ynomanager"
+version = "0.1.0"
+authors = ["Viet Dinh <54ckb0y789@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dioxus = { version = "0.5", features = ["desktop", "router"] }
+
+# Debug
+tracing = "0.1.40"
+dioxus-logger = "0.5.0"
+dioxus-sdk = { version = "0.5.0", features = ["storage"] }
+tokio = { version = "1.37.0", default-features = false }
+serde = "1.0.201"
+
+[profile.release]
+strip = true

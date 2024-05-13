@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=schema.json
+
+- name: Yume 2kki
+  yno_translation: 2kki
+  patches:
+    - version: [0, 112, 1]
+      version_name: v0.112 patch 1
+      link: https://yume2kki.fandom.com/wiki/Version_History
+      path: ゆめ２っき

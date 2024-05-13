@@ -1,0 +1,85 @@
+{
+	"$ref": "#/definitions/Games",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"definitions": {
+		"Game": {
+			"additionalProperties": false,
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"patches": {
+					"items": {
+						"$ref": "#/definitions/Patch"
+					},
+					"type": "array"
+				},
+				"yno_translation": {
+					"type": "string"
+				}
+			},
+			"required": ["name", "patches"],
+			"type": "object"
+		},
+		"Games": {
+			"items": {
+				"$ref": "#/definitions/Game"
+			},
+			"type": "array"
+		},
+		"Patch": {
+			"additionalProperties": false,
+			"properties": {
+				"link": {
+					"type": "string"
+				},
+				"path": {
+					"type": "string"
+				},
+				"prerelease": {
+					"items": [
+						{
+							"title": "kind",
+							"type": "string"
+						},
+						{
+							"title": "rev",
+							"type": "number"
+						}
+					],
+					"maxItems": 2,
+					"minItems": 2,
+					"type": "array"
+				},
+				"standalone": {
+					"const": false,
+					"type": "boolean"
+				},
+				"version": {
+					"items": [
+						{
+							"title": "major",
+							"type": "number"
+						},
+						{
+							"title": "minor",
+							"type": "number"
+						},
+						{
+							"title": "patch",
+							"type": ["number", "string"]
+						}
+					],
+					"maxItems": 3,
+					"minItems": 3,
+					"type": "array"
+				},
+				"version_name": {
+					"type": "string"
+				}
+			},
+			"required": ["version", "version_name", "link", "path"],
+			"type": "object"
+		}
+	}
+}

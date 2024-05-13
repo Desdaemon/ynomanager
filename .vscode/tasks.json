@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Serve CSS",
+			"type": "process",
+			"isBackground": true,
+			"command": "pnpm",
+			"args": [
+				"dlx",
+				"sass",
+				"--load-path=node_modules/@picocss/pico/scss",
+				"--watch",
+				"input.scss",
+				"assets/app.css"
+			]
+		},
+		{
+			"label": "Serve Dioxus",
+			"type": "shell",
+			"isBackground": true,
+			"command": "dx",
+			"args": ["serve", "--hot-reload"]
+		},
+		{
+			"label": "Serve",
+			"dependsOn": ["Serve CSS", "Serve Dioxus"],
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

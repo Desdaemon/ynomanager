@@ -1,0 +1,17 @@
+{
+	"name": "ynomanager",
+	"version": "1.0.0",
+	"description": "npm dependencies for ynomanager",
+	"dependencies": {
+		"@picocss/pico": "^2.0.6"
+	},
+	"type": "module",
+	"scripts": {
+		"genschema": "ts-json-schema-generator --path ./data/defs.d.ts --type Games -o data/schema.json",
+		"lint": "prettier --write . && cargo fmt --all"
+	},
+	"devDependencies": {
+		"prettier": "^3.2.5",
+		"ts-json-schema-generator": "^2.1.1"
+	}
+}
